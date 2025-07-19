@@ -1,10 +1,12 @@
 pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/HKTwoScript/ZenUpdateScript/main/ZenUpdate.lua"))()
+    -- Load the Zen GUI from the raw GitHub file
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/HKTwoScript/ZenUpdateScript/main/ZenUpdateScript"))()
 end)
 
-task.spawn(function()
-    pcall(function()
-        workspace.DinoEvent:Destroy()
-        game:GetService("ReplicatedStorage").Modules.UpdateService.ZenEvent.Parent = workspace
-    end)
+pcall(function()
+    workspace.DinoEvent:Destroy()
+end)
+
+pcall(function()
+    game:GetService("ReplicatedStorage").Modules.UpdateService.ZenEvent.Parent = workspace
 end)
